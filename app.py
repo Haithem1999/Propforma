@@ -1,7 +1,8 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Propforma: Property Valuation Tool", page_icon="🏡",
+    page_title="Propforma: Property Valuation Tool", 
+    page_icon="🏡",
     layout="centered",  # This ensures centered layout
     initial_sidebar_state="collapsed"  # Hide sidebar by default
 )
