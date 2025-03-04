@@ -1,7 +1,12 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="ElevenLabs AI Voice Agent Demo",
+    layout="centered",  # This ensures centered layout
+    initial_sidebar_state="collapsed"  # Hide sidebar by default
+)
 
-# Add custom CSS to center the widget
+# Add custom CSS to center the widget and position it right below title
 st.markdown("""
     <style>
         .stApp {
@@ -11,10 +16,9 @@ st.markdown("""
         .widget-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 80vh;
-            margin: auto;
-            max-width: 800px;  /* Limit maximum width for better appearance */
+            align-items: flex-start;  /* Changed to flex-start to position right below title */
+            margin: 20px auto;  /* Reduced margin to bring widget up */
+            max-width: 800px;
         }
         .main {
             display: flex;
@@ -22,19 +26,20 @@ st.markdown("""
             align-items: center;
             flex-direction: column;
         }
+        /* Reduce padding/margins of title */
+        .stTitle {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
     </style>
 """, unsafe_allow_html=True)
 
-# Create columns to help with centering
-col1, col2, col3 = st.columns([1,3,1])
+st.title("ElevenLabs AI Voice Agent Demo")
 
-with col2:
-    st.title("ElevenLabs AI Voice Agent Demo")
-    
-    # Inject custom HTML/JS for ElevenLabs Convai widget
-    st.components.v1.html("""
-        <div class="widget-container">
-            <elevenlabs-convai agent-id="VRygiWvgYxYK1ivGdfMH"></elevenlabs-convai>
-            <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
-        </div>
-    """, height=600)
+# Inject custom HTML/JS for ElevenLabs Convai widget
+st.components.v1.html("""
+    <div class="widget-container">
+        <elevenlabs-convai agent-id="VRygiWvgYxYK1ivGdfMH"></elevenlabs-convai>
+        <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    </div>
+""", height=600)
