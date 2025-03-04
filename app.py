@@ -1,9 +1,5 @@
 import streamlit as st
 
-st.set_page_config(
-    page_title="ElevenLabs AI Voice Agent Demo",
-    layout="centered"  # This ensures centered layout
-)
 
 # Add custom CSS to center the widget
 st.markdown("""
