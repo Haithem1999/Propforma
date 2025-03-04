@@ -24,14 +24,13 @@ def main():
     
     st.title("🏡 Propforma: Property Valuation Tool")
     
-    # Embedding the ElevenLabs ConvAI Widget
-    st.markdown(
-        '''
-        <elevenlabs-convai agent-id="VRygiWvgYxYK1ivGdfMH"></elevenlabs-convai>
-        <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
-        ''',
-        unsafe_allow_html=True
-    )
+    # Inject custom HTML/JS for ElevenLabs Convai widget
+    st.components.v1.html("""
+        <div class="widget-container">
+            <elevenlabs-convai agent-id="VRygiWvgYxYK1ivGdfMH"></elevenlabs-convai>
+            <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+        </div>
+    """, height=900)
 
 if __name__ == "__main__":
     main()
