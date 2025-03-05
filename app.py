@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Propforma: Property Valuation Tool", 
+    page_title="Propforma: Property Valuation Tool",
     page_icon="🏡",
     layout="centered",  # This ensures centered layout
     initial_sidebar_state="collapsed"  # Hide sidebar by default
@@ -40,7 +40,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("ElevenLabs AI Voice Agent Demo")
+st.title("Propforma: Property Valuation Tool")
 
 # Add scroll indicator
 st.markdown("""
